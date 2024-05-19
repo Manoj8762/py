@@ -1,0 +1,77 @@
+from collections import Counter
+This line imports the Counter class from the collections module. Counter is a subclass of dict specifically designed for counting hashable objects.
+python
+Copy code
+list = [1, 1, 2, 2, 3, 3, 4, 4]
+This line defines a list named list containing integers with some repeated elements.
+python
+Copy code
+kle = []
+This line initializes an empty list named kle.
+python
+Copy code
+for num in list:
+    print(num)
+    kle.append(num)
+    print(kle)
+This loop iterates over each element (num) in the list list.
+print(num) prints the current element from the list.
+kle.append(num) appends the current element to the kle list.
+print(kle) prints the kle list after appending the current element.
+python
+Copy code
+counter = Counter(list)
+This line creates a Counter object named counter from the list. The Counter counts the occurrences of each element in the list and stores them as a dictionary where the keys are the elements and the values are their counts.
+python
+Copy code
+print(kle)
+This line prints the content of the list kle, which now contains all the elements from the original list.
+python
+Copy code
+duplicates = [item for item, count in counter.items() if count > 1]
+This line uses a list comprehension to create a list named duplicates. It iterates over the items (key-value pairs) in counter. If the count of an item (value) is greater than 1, it includes the item (key) in the duplicates list. Essentially, it filters out items that appear more than once in the original list.
+python
+Copy code
+if duplicates:
+This line checks if the duplicates list is not empty. If it contains any elements, the condition evaluates to True.
+python
+Copy code
+    print('\n \n')
+This line prints two newline characters, effectively adding a blank line in the output for better readability.
+python
+Copy code
+    print(duplicates)
+If the duplicates list is not empty, this line prints the duplicates list. This will show all elements that appeared more than once in the original list.
+python
+Copy code
+    print(len(duplicates))
+This line prints the length of the duplicates list, which is the number of unique elements that appeared more than once in the original list.
+Summary of the Output
+Given the list = [1, 1, 2, 2, 3, 3, 4, 4], the code will output:
+
+Each element of list and the state of kle after each element is appended:
+csharp
+Copy code
+1
+[1]
+1
+[1, 1]
+2
+[1, 1, 2]
+2
+[1, 1, 2, 2]
+3
+[1, 1, 2, 2, 3]
+3
+[1, 1, 2, 2, 3, 3]
+4
+[1, 1, 2, 2, 3, 3, 4]
+4
+[1, 1, 2, 2, 3, 3, 4, 4]
+The final state of kle:
+csharp
+Copy code
+[1, 1, 2, 2, 3, 3, 4, 4]
+A blank line for readability.
+The list [1, 2, 3, 4], which are the elements that have duplicates in the original list.
+The number 4, which is the count of such elements (all four unique elements in the original list appear more than once).
